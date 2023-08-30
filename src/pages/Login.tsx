@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { setEmailAction } from '../redux/actions';
 
 function Login() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');

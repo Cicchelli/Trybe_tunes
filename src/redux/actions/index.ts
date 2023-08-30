@@ -5,9 +5,9 @@ export interface Action<T extends string, P = undefined> {
   payload?: P;
 }
 
-export type SetEmailAction = Action<"SET_EMAIL", string>;
+export type SetEmailAction = Action<'SET_EMAIL', string>;
 export const setEmailAction = (email: string): SetEmailAction => ({
-  type: "SET_EMAIL",
+  type: 'SET_EMAIL',
   payload: email,
 });
 
@@ -19,20 +19,20 @@ export interface Expense {
   tag: string;
   description: string;
   exchangeRates: Record<
-    string,
-    {
-      code: string;
-      codein: string;
-      name: string;
-      high: string;
-      low: string;
-      varBid: string;
-      pctChange: string;
-      bid: string;
-      ask: string;
-      timestamp: string;
-      create_date: string;
-    }
+  string,
+  {
+    code: string;
+    codein: string;
+    name: string;
+    high: string;
+    low: string;
+    varBid: string;
+    pctChange: string;
+    bid: string;
+    ask: string;
+    timestamp: string;
+    create_date: string;
+  }
   >;
 }
 
@@ -44,35 +44,35 @@ export interface WalletState {
   idToEdit: number;
 }
 
-export type AddExpenseAction = Action<"ADD_EXPENSE", Expense>;
+export type AddExpenseAction = Action<'ADD_EXPENSE', Expense>;
 export const addExpenseAction = (expense: Expense): AddExpenseAction => ({
-  type: "ADD_EXPENSE",
+  type: 'ADD_EXPENSE',
   payload: expense,
 });
 
-export type SetCurrenciesAction = Action<"SET_CURRENCIES", string[]>;
+export type SetCurrenciesAction = Action<'SET_CURRENCIES', string[]>;
 export const setCurrenciesAction = (
-  currencies: string[]
+  currencies: string[],
 ): SetCurrenciesAction => ({
-  type: "SET_CURRENCIES",
+  type: 'SET_CURRENCIES',
   payload: currencies,
 });
 
-export type DeleteExpenseAction = Action<"DELETE_EXPENSE", number>;
+export type DeleteExpenseAction = Action<'DELETE_EXPENSE', number>;
 export const deleteExpenseAction = (
-  expenseId: number
+  expenseId: number,
 ): DeleteExpenseAction => ({
-  type: "DELETE_EXPENSE",
+  type: 'DELETE_EXPENSE',
   payload: expenseId,
 });
 
-export type EditExpenseAction = Action<"EDIT_EXPENSE", Expense>;
+export type EditExpenseAction = Action<'EDIT_EXPENSE', Expense>;
 export const editExpenseAction = (expense: Expense): EditExpenseAction => ({
-  type: "EDIT_EXPENSE",
+  type: 'EDIT_EXPENSE',
   payload: expense,
 });
 
-export type FinishEditingAction = Action<"FINISH_EDITING">;
+export type FinishEditingAction = Action<'FINISH_EDITING'>;
 export const finishEditingAction = (): FinishEditingAction => ({
-  type: "FINISH_EDITING",
+  type: 'FINISH_EDITING',
 });

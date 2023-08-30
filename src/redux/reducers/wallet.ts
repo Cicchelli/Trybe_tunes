@@ -1,6 +1,6 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { AnyAction } from "redux";
-import { WalletState } from "../actions";
+import { AnyAction } from 'redux';
+import { WalletState } from '../actions';
 
 const initialState: WalletState = {
   currencies: [],
@@ -12,43 +12,42 @@ const initialState: WalletState = {
 
 const walletReducer = (
   state = initialState,
-  action: AnyAction
+  action: AnyAction,
 ): WalletState => {
-  console.log("Reducer action:", action);
+  console.log('Reducer action:', action);
   switch (action.type) {
-    case "ADD_EXPENSE": {
+    case 'ADD_EXPENSE': {
       return {
         ...state,
         expenses: [...state.expenses, action.payload],
         totalExpenses: state.totalExpenses + action.payload.value,
       };
     }
-    case "SET_CURRENCIES": {
+    case 'SET_CURRENCIES': {
       return {
         ...state,
         currencies: action.payload,
       };
     }
-    case "DELETE_EXPENSE": {
+    case 'DELETE_EXPENSE': {
       return {
         ...state,
         expenses: state.expenses.filter(
-          (expense) => expense.id !== action.payload
+          (expense) => expense.id !== action.payload,
         ),
         totalExpenses: state.totalExpenses - action.payload.value,
       };
     }
-    case "EDIT_EXPENSE": {
+    case 'EDIT_EXPENSE': {
       return {
         ...state,
-        expenses: state.expenses.map((expense) =>
-          expense.id === action.payload.id ? action.payload : expense
-        ),
+        expenses: state.expenses.map((expense) => (expense.id === action.payload.id
+          ? action.payload : expense)),
         editor: true,
         idToEdit: action.payload.id,
       };
     }
-    case "FINISH_EDITING": {
+    case 'FINISH_EDITING': {
       return {
         ...state,
         editor: false,
