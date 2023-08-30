@@ -1,5 +1,15 @@
+import Header from '../components/Header';
+import WalletForm from '../components/WalletForm';
+import Table from '../components/Table';
+
 function Wallet() {
-  return <div>TrybeWallet</div>;
+  return (
+    <section>
+      <Header />
+      <WalletForm />
+      <Table />
+    </section>
+  );
 }
 
 export default Wallet;
