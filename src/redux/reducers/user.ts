@@ -1,13 +1,13 @@
 // Esse reducer será responsável por tratar as informações da pessoa usuária
 
-import { AnyAction } from 'redux';
+import { AnyAction } from "redux";
 
 const initialState = {
-  email: '',
+  email: "",
 };
 
 const userReducer = (state = initialState, action: AnyAction) => {
-  if (action.type === 'SET_EMAIL') {
+  if (action.type === "SET_EMAIL") {
     return {
       ...state,
       email: action.payload,

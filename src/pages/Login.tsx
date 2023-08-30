@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setEmailAction } from '../redux/actions';
 
 function Login() {
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ function Login() {
     dispatch(setEmailAction(email));
     navigate('/carteira');
   };
-  
+
   const pass = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const valid = password.length >= 6;
   const button = !pass || !valid;
