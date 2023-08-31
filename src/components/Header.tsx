@@ -6,9 +6,9 @@ const Texpenses = (
   expenses: Expense[],
   currency: string,
 ) => expenses.reduce((total, exp) => {
-  const exchangeRates = exp.exchangeRates[exp.currency];
-  const convertedValue = exchangeRates
-    ? parseFloat(exp.value) * parseFloat(exchangeRates.ask)
+  const rates = exp.exchangeRates[exp.currency];
+  const convertedValue = rates
+    ? parseFloat(exp.value) * parseFloat(rates.ask)
     : 0;
   return total + convertedValue;
 }, 0).toFixed(2);
