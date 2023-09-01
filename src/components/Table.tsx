@@ -6,13 +6,13 @@ function Table() {
   const expenses = useSelector((state: RootState) => state.wallet.expenses);
   const dispatch = useDispatch();
 
-  // function edit(editedExpense: Expense) {
-  //   dispatch(editExpenseAction(editedExpense));
-  // }
+  function edit(editedExpense: Expense) {
+    dispatch(editExpenseAction(editedExpense));
+  }
 
-  // function erase(expenseId: number) {
-  //   dispatch(deleteExpenseAction(expenseId));
-  // }
+  function erase(expenseId: number) {
+    dispatch(deleteExpenseAction(expenseId));
+  }
 
   const info = (expen: Expense) => {
     const currencyInfo = expen.exchangeRates[expen.currency];
@@ -64,20 +64,20 @@ function Table() {
                 <td>{currencyInfo.convertedValue}</td>
                 <td>Real</td>
                 <td>
-                  {/* <button
+                  <button
                     type="button"
                     onClick={ () => edit(expen) }
                     data-testid="edit-btn"
                   >
                     Editar
-                  </button> */}
-                  {/* <button
+                  </button>
+                  <button
                     type="button"
                     onClick={ () => erase(expen.id) }
                     data-testid="delete-btn"
                   >
                     Excluir
-                  </button> */}
+                  </button>
                 </td>
               </tr>
             );
