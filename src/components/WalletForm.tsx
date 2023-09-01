@@ -118,59 +118,6 @@ function WalletForm() {
     setTag('');
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const response = await fetch('https://economia.awesomeapi.com.br/json/all');
-  //   const data = await response.json();
-  //   const retrieveExchangeRates = (currenc: string[], dat: Record<string, any>):
-  //   Record<string, any> => {
-  //     const exchangeRates: Record<string, any> = {};
-  //     currenc.forEach((curr) => {
-  //       exchangeRates[curr] = {
-  //         code: dat[curr].code,
-  //         codein: dat[curr].codein,
-  //         name: dat[curr].name,
-  //         high: dat[curr].high,
-  //         low: dat[curr].low,
-  //         varBid: dat[curr].varBid,
-  //         pctChange: dat[curr].pctChange,
-  //         bid: dat[curr].bid,
-  //         ask: dat[curr].ask,
-  //         timestamp: dat[curr].timestamp,
-  //         create_date: dat[curr].create_date,
-  //       };
-  //     });
-  //     return exchangeRates;
-  //   }; if (isEditing) {
-  //     const editedExpense = expenses.find((exp) => exp.id === idToEdit);
-  //     if (editedExpense) {
-  //       editedExpense.value = expense;
-  //       editedExpense.description = description;
-  //       editedExpense.currency = currency;
-  //       editedExpense.method = method;
-  //       editedExpense.tag = tag;
-  //       editedExpense.exchangeRates = retrieveExchangeRates(currencies, data);
-  //       dispatch(editExpenseAction(editedExpense));
-  //       dispatch(finishEditingAction());
-  //     }
-  //   } else {
-  //     dispatch(addExpenseAction({
-  //       id: expenses.length,
-  //       value: expense,
-  //       description,
-  //       currency,
-  //       method,
-  //       tag,
-  //       exchangeRates: retrieveExchangeRates(currencies, data),
-  //     }));
-  //   }
-  //   setExpense('');
-  //   setDescription('');
-  //   setCurrency('');
-  //   setMethod('');
-  //   setTag('');
-  // };
-
   return (
     <div>
       <form onSubmit={ handleSubmit }>
